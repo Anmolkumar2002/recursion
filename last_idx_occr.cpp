@@ -1,13 +1,13 @@
 #include<iostream>
 using namespace std;
-int firstIndex(int arr[], int size, int idx, int d){
+int lastIndex(int arr[], int size, int idx, int d){
     if(idx == -1){
         return -1;
     }
     if(arr[idx] == d){
         return idx;
     }else{
-        int ans = firstIndex(arr, size, idx - 1, d);
+        int ans = lastIndex(arr, size, idx - 1, d);
         return ans;
     }
 }
@@ -22,7 +22,7 @@ int main(){
     }
     cout << "Enter that number you want to find first index of occurence: ";
     cin >> data;
-    int fi = firstIndex(arr, n, n - 1, data);
+    int fi = lastIndex(arr, n, n - 1, data);
     cout << "First index occurence of number " << data << " is: " << fi;
     return 0;
 }
